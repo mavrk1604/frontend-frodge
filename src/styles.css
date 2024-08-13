@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* Uso de fuentes en CSS
+Space Grotesk:
+font-family: "Space Grotesk", system-ui;
+Poppins:
+font-family: "Poppins", sans-serif;
+Playwrite:
+font-family: "Playwrite US Trad", cursive; */
+
+/* Reseteo de estilos globales for defecto de CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
