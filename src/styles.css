@@ -6,3 +6,10 @@ Poppins:
 font-family: "Poppins", sans-serif;
 Playwrite:
 font-family: "Playwrite US Trad", cursive; */
+
+/* Reseteo de estilos globales for defecto de CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
