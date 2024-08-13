@@ -1,0 +1,14 @@
+*{
+    text-decoration: none;
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+
+}
+
+.navbar div {
+    background: beige;
+    height: 70px;
+}
