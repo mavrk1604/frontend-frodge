@@ -1,14 +1,54 @@
-*{
+* {
     text-decoration: none;
+    list-style: none;
 }
 
-.navbar{
+.navbar {
     display: grid;
-    grid-template-columns: 60% 20% 20%;
-
+    grid-template-columns: 2fr 6fr 4fr;
+    background-color: var(--bg-light);
 }
 
 .navbar div {
-    background: beige;
-    height: 56px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0px 24px;
+    gap: 16px;
+}
+
+.logo {
+    font-family: "Playwrite US Trad", cursive;
+    font-size: 1.5rem;
+    color: var(--green-light);
+}
+
+.nav-buttons {
+    justify-content: center;
+}
+
+.nav-register-button {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-light);
+    color: var(--red-light);
+    border: 2px solid;
+    font-size: 14px;
+    padding: 2px 16px;
+    height: 32px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    align-content: center;
+}
+
+.nav-login-button {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--blue-light);
+    color: white;
+    border: 2px solid var(--blue-light);
+    font-size: 14px;
+    padding: 2px 16px;
+    height: 32px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    align-content: center;
 }

@@ -13,3 +13,14 @@ font-family: "Playwrite US Trad", cursive; */
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --bg-light: #F7F4EA;
+  --green-light: #27A69E;
+  --green-dark: #0B312E;
+  --blue-light: #2196F3;
+  --blue-dark: #08253D;
+  --red-light: #D72638;
+  --red-dark: #5A1017;
+  --grey-light: #ACACAC;
+}
