@@ -12,12 +12,15 @@ font-family: "Playwrite US Trad", cursive; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 :root {
   --bg-light: #F7F4EA;
   --green-light: #27A69E;
   --green-dark: #0B312E;
+  --blue-lighter: #b4d6f2;
   --blue-light: #2196F3;
   --blue-dark: #08253D;
   --red-light: #D72638;

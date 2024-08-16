@@ -51,4 +51,10 @@
     border-radius: 16px;
     box-sizing: border-box;
     align-content: center;
+    transition: 0.3s;
+}
+
+.nav-login-button:hover {
+    background-color: var(--blue-dark);
+    border: 2px solid var(--blue-dark);
 }
