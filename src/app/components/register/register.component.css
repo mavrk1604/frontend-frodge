@@ -1,0 +1,107 @@
+.register-sidebar {
+  display: grid;
+  grid-template-rows: 2fr 5fr 3fr;
+  width: 30%;
+  height: 100vh;
+  background-color: var(--bg-light);
+}
+
+.logo {
+  font-family: "Playwrite US Trad", cursive;
+  font-size: 2.5rem;
+  align-content: end;
+  text-align: center;
+}
+
+.logo a {
+  color: var(--green-light);
+}
+
+.logo a:hover {
+  color: var(--blue-light);
+}
+
+.register-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  padding: 16px;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.register-primary input {
+  width: 65%;
+  align-self: center;
+  padding: 4px 8px;
+  color: var(--green-light);
+  background-color: var(--bg-light);
+  border: solid 1.5px var(--green-light);
+  font-size: 16px;
+  border-radius: 16px;
+  outline: none;
+}
+
+.register-primary input::placeholder {
+  color: var(--green-light);
+  opacity: 1;
+  padding-left: 4px;
+}
+
+.register-primary input:focus {
+  border-color: var(--green-light);
+}
+
+.register-button {
+  background-color: var(--blue-light);
+  color: var(--bg-light);
+  border: solid 1px var(--blue-light);
+  font-size: 16px;
+  border-radius: 16px;
+  width: 55%;
+  align-self: center;
+  padding: 4px 8px;
+  transition: 0.2s;
+}
+
+.register-button:hover {
+  background-color: var(--blue-dark);
+  border: solid 1px var(--blue-dark);
+}
+
+.register-button:focus {
+  opacity: 0.75;
+}
+
+.register-secondary {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-button {
+  background-color: var(--red-light);
+  color: var(--bg-light);
+  border: solid 1px var(--red-light);
+  font-size: 16px;
+  border-radius: 16px;
+  width: 55%;
+  align-self: center;
+  padding: 4px 8px;
+  transition: 0.2s;
+}
+
+.login-button:hover {
+  background-color: var(--red-dark);
+  border: solid 1px var(--red-dark);
+}
+
+.login-button:focus {
+  opacity: 0.75;
+}
+
