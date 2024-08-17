@@ -2,12 +2,10 @@
   <div class="logo">
     <a href="">Frodge</a>
   </div>
-  <div class="register-primary">
-    <input class="email-input" placeholder="Correo Electrónico" type="email">
-    <input class="password-input" placeholder="Contraseña" type="password">
-    <a class="register-button" href="">Crear cuenta</a>
-  </div>
-  <div class="register-secondary">
+  <form (ngSubmit)="registerUser()" class="register-primary">
+    <input [(ngModel)]="email" class="email-input" placeholder="Correo Electrónico" type="email" name="email">
+    <input [(ngModel)]="password" class="password-input" placeholder="Contraseña" type="password" name="password">
+    <button class="register-button" type="submit">Crear cuenta</button>
     <a class="login-button" href="">Ya tengo una cuenta</a>
-  </div>
+  </form>
 </div>
