@@ -1,4 +1,84 @@
-H1 {
-    background-color: blue;
-    color: rgb(255, 0, 0);
+/* Carousel Container */
+.carousel {
+    height: 100vh;
+    width: 70vw;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Carousel Inner Wrapper */
+.carousel-inner {
+    display: flex;
+    width: 400%;
+    /* Adjusted to fit the total width including the additional slide */
+    animation: slide 12s infinite;
+    /* Increased duration for the new sequence */
+}
+
+/* Individual Slide */
+.carousel-item {
+    width: 25%;
+    /* Adjusted width for the new number of slides */
+    flex-shrink: 0;
+    position: relative;
+    text-align: left;
+    color: #fff;
+}
+
+/* Image Styling */
+.carousel-item img {
+    width: 100%;
+    filter: brightness(60%);
+}
+
+/* Caption Styling */
+.carousel-item h2,
+.carousel-item h3 {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+
+.carousel-item h2 {
+    top: 5%;
+    font-size: 2rem;
+    
+}
+
+.carousel-item h3 {
+    top: 15%;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-25%);
+    }
+
+    40% {
+        transform: translateX(-25%);
+    }
+
+    60% {
+        transform: translateX(-50%);
+    }
+
+    80% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
