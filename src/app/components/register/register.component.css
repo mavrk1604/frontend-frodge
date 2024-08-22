@@ -1,7 +1,7 @@
 .register-sidebar {
   display: grid;
-  grid-template-rows: 2fr 5fr 3fr;
-  width: 30%;
+  grid-template-rows: 3fr 5fr 2fr;
+  width: auto;
   height: 100vh;
   background-color: var(--bg-light);
 }
@@ -52,7 +52,7 @@
 }
 
 .register-primary input:focus {
-  border-color: var(--green-light);
+  border-color: var(--blue-light);
 }
 
 .register-button {
@@ -88,7 +88,7 @@
   background-color: var(--red-light);
   color: var(--bg-light);
   border: solid 1px var(--red-light);
-  font-size: 16px;
+  font-size: 12px;
   border-radius: 16px;
   width: 55%;
   align-self: center;
