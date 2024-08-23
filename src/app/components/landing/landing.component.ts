@@ -1,29 +1,41 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
+import { LandingCarouselComponent } from '../landing-carousel/landing-carousel.component';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
+  imports: [RouterOutlet, LoginComponent, RegisterComponent, LandingCarouselComponent, CommonModule, FormsModule],
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  styleUrl: './landing.component.css'
 })
 export class LandingComponent {
-  currentIndex = 0;
-  totalSlides = 3;
 
-  prevSlide() {
-    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.totalSlides - 1;
-    this.updateSlide();
+  isRegisterMode: Boolean = true;
+
+  toggleMode() {
+    this.isRegisterMode = !this.isRegisterMode;
   }
 
-  nextSlide() {
-    this.currentIndex = (this.currentIndex < this.totalSlides - 1) ? this.currentIndex + 1 : 0;
-    this.updateSlide();
+  email: String = ''
+  password: String = ''
+
+  constructor(private authService: AuthService) { }
+
+  registerUser(): void {
+    this.authService.register(this.email, this.password).subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 
-  private updateSlide() {
-    const inner = document.querySelector('.carousel-inner') as HTMLElement;
-    if (inner) {
-      inner.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-    }
-  }
 }
