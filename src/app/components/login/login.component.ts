@@ -22,7 +22,10 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       response => {
         sessionStorage.setItem('token', response.token)
-        this.router.navigate(['/'])
+        this.router.navigate(['/products'])
+      },
+      error => {
+        console.log("error: ", error.error.msg)
       }
     )
   }
