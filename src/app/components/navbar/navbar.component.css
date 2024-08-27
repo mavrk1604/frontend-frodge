@@ -23,21 +23,26 @@
     color: var(--green-light);
 }
 
+.logo:hover {
+    color: var(--red-light);
+}
+
 .nav-buttons {
-    justify-content: center;
+    justify-content: end;
 }
 
 .nav-register-button {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg-light);
     color: var(--red-light);
-    border: 2px solid;
+    border: 1px solid;
     font-size: 14px;
     padding: 2px 16px;
     height: 32px;
     border-radius: 16px;
     box-sizing: border-box;
     align-content: center;
+    transition: 0.3s;
 }
 
 .nav-login-button {
@@ -52,6 +57,11 @@
     box-sizing: border-box;
     align-content: center;
     transition: 0.3s;
+}
+
+.nav-register-button:hover {
+    background-color: var(--red-light);
+    color: white;
 }
 
 .nav-login-button:hover {
