@@ -5,5 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LandingComponent } from './components/landing/landing.component';
 
 export const routes: Routes = [
-  { path: '', title: `Landing`, component: LandingComponent },
+  {path: '', title: `Landing`, component: LandingComponent },
+  {path: "register", title: "Register", component: RegisterComponent},
+  {path: "login", title: "Login", component: LoginComponent},
 ];
