@@ -1,37 +1,32 @@
-<body>
-    <div id="Form">
-        <!-- Formulario -->
-        <form class="form-title">
-            <h2>Crear nuevo producto:</h2>			
-            <!-- Contenedor del Formulario -->
-            <div class="create-product">
+<app-navbar></app-navbar>
 
-                <input class="form-one"   type="text" name="Nombre" placeholder="Nombre">
-                
-                <input class="form-one"  type="text" name="Tipo" placeholder="Tipo">
-
-                <input class="form-two"   type="text" name="Descripcion" placeholder="Descripcion">
-
-                <input class="form-two"  type="text" name="Informacion" placeholder="Informacion">
-                <div class="checkbox-vegetarian">
-                <p>Vegetariano</p>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="checkbox-perecedero">
-                    <p>perecedero</p>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                <br>
-    
-                <input type="submit" value="Registrar en base de datos" class="Registrar_action">
-            </div>
-        </form>
-    </div>
-</body>
+	<div id="create-product">
+		<!-- Formulario -->
+		<form class="create-product">
+			<h2>Crear nuevo producto:</h2>
+			<!-- Contenedor del Formulario -->
+			<div class="create-product_form">
+				<input class="form-one" type="text" name="Nombre" placeholder="Nombre">
+				<input class="form-one" type="text" name="Tipo" placeholder="Tipo">
+				<input class="form-two" type="text" name="Descripcion" placeholder="Descripcion">
+				<input class="form-two" type="text" name="Conservacion" placeholder="Conservacion">
+				<div class="checkbox-vegetarian">
+					<p>Vegetariano</p>
+					<label class="switch">
+						<input type="checkbox">
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="checkbox-perecedero">
+					<p>Perecedero</p>
+					<label class="switch">
+						<input type="checkbox">
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="submit-product">
+							<button class="register-button" type="submit">Registrar en base de datos</button>
+				</div>
+			</div>
+		</form>
+	</div>
