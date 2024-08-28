@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
 import { LandingCarouselComponent } from '../landing-carousel/landing-carousel.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
@@ -11,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, RegisterComponent, LandingCarouselComponent, CommonModule, FormsModule],
+  imports: [RouterOutlet, LandingCarouselComponent, CommonModule, FormsModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
