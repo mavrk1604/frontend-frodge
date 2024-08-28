@@ -7,7 +7,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 
 
 export const routes: Routes = [
-  {path: '', title: `Landing`, component: LandingComponent },
+  { path: '', title: `Landing`, component: LandingComponent },
   { path: 'products', title: 'Products', component: ProductsComponent },
   { path:'recipes', title: 'Recipes', component:RecipesComponent},
   { path: 'create-product', title: 'Create Product', component: CreateProductComponent },
