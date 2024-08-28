@@ -6,6 +6,7 @@ import { LandingCarouselComponent } from '../landing-carousel/landing-carousel.c
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -17,15 +18,20 @@ import { FormsModule } from '@angular/forms';
 export class LandingComponent {
 
   isRegisterMode: Boolean = true;
+  isLoginMode: Boolean = true;
 
   toggleMode() {
     this.isRegisterMode = !this.isRegisterMode;
+
+    this.isLoginMode = !this.isLoginMode
   }
 
-  email: String = ''
-  password: String = ''
+  email: string = ''
+  password: string = ''
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
+  
+
 
   registerUser(): void {
     this.authService.register(this.email, this.password).subscribe(
@@ -38,4 +44,15 @@ export class LandingComponent {
     )
   }
 
+  loginUser(): void {
+    this.authService.login(this.email, this.password).subscribe(
+      response => {
+        console.log(response)
+        this.router.navigate(['/products'])
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
 }

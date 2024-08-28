@@ -1,3 +1,5 @@
+<!-- REGISTER -->
+
 <div class="landing-container">
   <app-landing-carousel></app-landing-carousel>
   <div *ngIf="isRegisterMode" class="register-sidebar">
@@ -11,15 +13,18 @@
       <a class="login-button" (click)="toggleMode()" routerLink="/auth/login">Ya tengo una cuenta</a>
     </form>
   </div>
+
+<!-- LOGIN -->
+
   <div *ngIf="!isRegisterMode" class="login-sidebar">
     <div class="logo">
       <a href="">Frodge</a>
     </div>
-    <div class="login-primary">
-      <input class="email-input" placeholder="Correo Electrónico" type="email">
-      <input class="password-input" placeholder="Contraseña" type="password">
-      <a class="login-button" href="">Iniciar Sesión</a>
-    </div>
+      <form (ngSubmit)="loginUser()" class="login-primary">
+        <input [(ngModel)]="email" class="email-input" placeholder="Correo Electrónico" type="email" name="email">
+        <input [(ngModel)]="password" class="password-input" placeholder="Contraseña" type="password" name="password">
+      <button class="login-button" (click)="toggleMode()" type="submit" href="">Iniciar Sesión</button>
+    </form>
     <div class="login-secondary">
       <a class="recovery-button" href="">Olvidaste tu contraseña?</a>
       <a class="signup-button" (click)="toggleMode()" routerLink="/auth/register" href="">Crear cuenta</a>
