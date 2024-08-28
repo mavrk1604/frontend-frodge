@@ -2,25 +2,25 @@
 
 	<div id="create-product">
 		<!-- Formulario -->
-		<form class="create-product">
+		<form class="create-product" (ngSubmit)="onSubmit()">
 			<h2>Crear nuevo producto:</h2>
 			<!-- Contenedor del Formulario -->
 			<div class="create-product_form">
-				<input class="form-one" type="text" name="Nombre" placeholder="Nombre">
-				<input class="form-one" type="text" name="Tipo" placeholder="Tipo">
-				<input class="form-two" type="text" name="Descripcion" placeholder="Descripcion">
-				<input class="form-two" type="text" name="Conservacion" placeholder="Conservacion">
+				<input class="form-one" type="text" [(ngModel)]="product.name" name="Nombre" placeholder="Nombre">
+				<input class="form-one" type="text" [(ngModel)]="product.type" name="Tipo" placeholder="Tipo">
+				<input class="form-two" type="text" [(ngModel)]="product.description" name="Descripcion" placeholder="Descripcion">
+				<input class="form-two" type="text" [(ngModel)]="product.conservation" name="Conservacion" placeholder="Conservacion">
 				<div class="checkbox-vegetarian">
 					<p>Vegetariano</p>
 					<label class="switch">
-						<input type="checkbox">
+						<input type="checkbox" [(ngModel)]="product.vegetarian">
 						<span class="slider"></span>
 					</label>
 				</div>
 				<div class="checkbox-perecedero">
 					<p>Perecedero</p>
 					<label class="switch">
-						<input type="checkbox">
+						<input type="checkbox" [(ngModel)]="product.perishable" (change)="onChange($event)">
 						<span class="slider"></span>
 					</label>
 				</div>
