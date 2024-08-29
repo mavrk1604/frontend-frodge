@@ -4,8 +4,8 @@
 		<!-- Formulario -->
 		<form class="create-product" (ngSubmit)="onSubmit()">
 			<h2>Crear nuevo producto:</h2>
-			<!-- Contenedor del Formulario -->
 			<div class="create-product_form">
+				<input class="form-one" type="text" [(ngModel)]="product.imageurl" name="URLImagen" placeholder="URL de Imagen">
 				<input class="form-one" type="text" [(ngModel)]="product.name" name="Nombre" placeholder="Nombre">
 				<input class="form-one" type="text" [(ngModel)]="product.type" name="Tipo" placeholder="Tipo">
 				<input class="form-two" type="text" [(ngModel)]="product.description" name="Descripcion" placeholder="Descripcion">
@@ -13,14 +13,14 @@
 				<div class="checkbox-vegetarian">
 					<p>Vegetariano</p>
 					<label class="switch">
-						<input type="checkbox" [(ngModel)]="product.vegetarian">
+						<input type="checkbox" [(ngModel)]="product.vegetarian" (change)="onVegetarianChange($event)">
 						<span class="slider"></span>
 					</label>
 				</div>
 				<div class="checkbox-perecedero">
 					<p>Perecedero</p>
 					<label class="switch">
-						<input type="checkbox" [(ngModel)]="product.perishable" (change)="onChange($event)">
+						<input type="checkbox" [(ngModel)]="product.perishable" (change)="onPerishableChange($event)">
 						<span class="slider"></span>
 					</label>
 				</div>
