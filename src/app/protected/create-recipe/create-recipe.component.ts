@@ -21,6 +21,4 @@ export class CreateRecipeComponent {
 
   constructor(private http: HttpClient) {}
 
-  onSubmit
-
 }
