@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,5 +15,27 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 
 export class CreateProductComponent {
+  perishableSelected: boolean = false
+  product = {
+    name: '',
+    type: '',
+    description: '',
+    conservation: '',
+    vegetarian: false,
+    perishable: false
+  };
 
+  constructor(private http: HttpClient) { }
+
+  onSubmit() {
+    this.http.post('http://localhost:8080/api/create-product', this.product)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
+
+  onChange(event: Event) {
+    this.perishableSelected = !this.perishableSelected
+    this.product.perishable = this.perishableSelected
+  }
 }
