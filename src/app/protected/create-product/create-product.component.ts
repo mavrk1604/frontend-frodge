@@ -11,6 +11,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.css'
 })
+
+
 export class CreateProductComponent {
 
 }
