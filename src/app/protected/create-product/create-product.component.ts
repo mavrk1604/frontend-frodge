@@ -12,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.css'
 })
+
+
 export class CreateProductComponent {
   perishableSelected: boolean = false
   vegetarianSelected: boolean = false
