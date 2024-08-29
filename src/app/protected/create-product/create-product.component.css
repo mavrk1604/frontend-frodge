@@ -148,7 +148,7 @@ input:checked + .slider:before {
 
 #create-product {
   background-color: var(--bg-light);
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -161,7 +161,7 @@ h2 {
   padding-bottom: 32px;
 }
 
-.create-product_form   {
+.create-product_form {
   width: 90vw;
   padding: 32px;
   display: flex;
@@ -172,21 +172,23 @@ h2 {
   background-color: white;
   font-family: "Poppins", sans-serif;
   border-radius: 16px;
+  margin-bottom: 34px;
 }
 
 .form-one,
-.form-two{
+.form-two {
   background-color: var(--grey-light);
   padding: 8px;
   border-radius: 16px;
   border: none;
 }
 
+
 .form-one {
   height: 2rem;
 }
 
-.form-two{
+.form-two {
   height: 9rem;
 }
 
@@ -267,4 +269,12 @@ input:checked+.slider:before {
 
 .submit-product {
   align-self: flex-end;
+}
+
+.register-button {
+  border: 1px solid var(--red-light);
+  padding: 8px 16px;
+  background-color: var(--red-light);
+  color: white;
+  border-radius: 16px;
 }

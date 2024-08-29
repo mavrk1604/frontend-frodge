@@ -13,6 +13,7 @@ export class ProductService {
 
   // Method to create a new product
   createProduct(product: {
+    imageurl: string,
     name: string;
     type: string;
     description: string;

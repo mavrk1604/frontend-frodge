@@ -14,7 +14,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreateProductComponent {
   perishableSelected: boolean = false
+  vegetarianSelected: boolean = false
   product = {
+    imageurl: '',
     name: '',
     type: '',
     description: '',
@@ -32,7 +34,13 @@ export class CreateProductComponent {
       });
   }
 
-  onChange(event: Event) {
+  onVegetarianChange(event: Event) {
+    this.vegetarianSelected = !this.vegetarianSelected
+    this.product.vegetarian = this.vegetarianSelected
+  }
+
+
+  onPerishableChange(event: Event) {
     this.perishableSelected = !this.perishableSelected
     this.product.perishable = this.perishableSelected
   }
