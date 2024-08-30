@@ -15,17 +15,17 @@
         <a href="#">Vegetariano</a>
       </div>
     </div>
-    <div class="products-list" >
+    <div class="products-list"  *ngFor="let product of allProducts">
       <div class="product-card">
         <div class="product-card-left">
           <label for="ingredientCheckbox"></label>
           <input type="checkbox" id="ingredientCheckbox" name="ingredient" />
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNuk7f8-yJIE2S03P8NI_XY_wPdtC1CIYXpBhBNU-UW9wGGTW5iEId3QdbRkyUktnF4CwsVGxBvge9gPD6HiRjfcE9A2k5wpTky5QnkVc55sSonqIxx74ImiViqY8u-O-C6gTZhJ_VfLyO6cJdFsI9V=w468-h356-s-no-gm?authuser=0" alt="">
-          <h3>ProductName</h3>
+          <img [src]=product.imageurl alt="">
+          <h3>{{product.name}}</h3>
         </div>
         <div class="product-card-right">
           <div class="switch-container">
-            <input type="checkbox" id="toggle-switch" class="toggle-switch">
+            <input (change)="cambiaso()" type="checkbox" [id]=product._id class="toggle-switch">
             <label for="toggle-switch" class="switch-label">
               <span class="slider"></span>
             </label>

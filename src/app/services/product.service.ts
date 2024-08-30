@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl: string = "http://localhost:8080/api";
+  private apiUrl: string = "http://localhost:8080/api/";
 
   constructor(private http: HttpClient) { }
 
-  // Method to create a new product
   createProduct(product: {
     imageurl: string,
     name: string;
@@ -22,6 +21,10 @@ export class ProductService {
     perishable: boolean;
   }): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/create-product`, product);
+  }
+
+  getAllProducts(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}get-all-products`);
   }
 
 }

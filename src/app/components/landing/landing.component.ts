@@ -46,7 +46,10 @@ export class LandingComponent {
     this.authService.login(this.email, this.password).subscribe(
       response => {
         console.log(response)
+        sessionStorage.setItem("id", response.id);
+        sessionStorage.setItem("token", response.token);
         this.router.navigate(['/products'])
+
       },
       error => {
         console.log(error)
