@@ -10,7 +10,7 @@
       <input [(ngModel)]="email" class="email-input" placeholder="Correo Electrónico" type="email" name="email">
       <input [(ngModel)]="password" class="password-input" placeholder="Contraseña" type="password" name="password">
       <button class="register-button" type="submit">Crear cuenta</button>
-      <a class="login-button" (click)="toggleMode()" routerLink="/auth/login">Ya tengo una cuenta</a>
+      <button class="login-button" (click)="toggleMode()" routerLink="/auth/login">Ya tengo una cuenta</button>
     </form>
   </div>
 
@@ -27,7 +27,7 @@
     </form>
     <div class="login-secondary">
       <a class="recovery-button" href="">Olvidaste tu contraseña?</a>
-      <a class="signup-button" (click)="toggleMode()" routerLink="/auth/register" href="">Crear cuenta</a>
+      <button class="signup-button" (click)="toggleMode()" routerLink="/auth/register" href="">Crear cuenta</button>
     </div>
   </div>
 </div>
