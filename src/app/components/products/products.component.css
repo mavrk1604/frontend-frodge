@@ -190,6 +190,7 @@
   color: var(--green-light);
   height: 28px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .recipes-button:hover {
@@ -207,6 +208,7 @@
   color: var(--red-light);
   height: 28px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .info-button:hover {

@@ -9,7 +9,7 @@
     font-size: 40px;
     font-family: "Space Grotesk", system-ui;
   }
-  #Form {
+  #create-recipe {
     display: inline-flexbox;
     text-align: center;
     background-color: #f7f4ea;
@@ -17,13 +17,13 @@
     height: 96vh;
     padding-bottom: 20px;
   }
-  .form-title {
+  .create-recipe {
     display: inline-block;
     align-items: center;
     text-align: center;
   }
   
-  .create-product {
+  .create-recipe_form {
     display: flex;
     width: 110vh;
     background-color: white;
@@ -61,7 +61,7 @@
   }
   
   /* checkbox */
- 
+
   .checkbox-vegetarian {
     display: flex;
     position: relative;
