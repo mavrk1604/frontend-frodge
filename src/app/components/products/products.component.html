@@ -25,8 +25,8 @@
         </div>
         <div class="product-card-right">
           <div class="switch-container">
-            <input (change)="cambiaso()" type="checkbox" [id]=product._id class="toggle-switch">
-            <label for="toggle-switch" class="switch-label">
+            <input [ngModel]="boolFunction(product.name)" (change)="cambiaso($event, product.name)" type="checkbox" [id]="product.name" class="toggle-switch">
+            <label [for]="product.name" class="switch-label">
               <span class="slider"></span>
             </label>
           </div>

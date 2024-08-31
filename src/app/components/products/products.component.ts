@@ -15,9 +15,12 @@ import { UserService } from '../../services/user.service';
 })
 export class ProductsComponent {
   ngOnInit() {
+    this.id = sessionStorage.getItem("id");
     this.getAllProducts()
+    this.getUserById()
   }
   allProducts: any[] = [] 
+  userProducts: any[] = [] 
   constructor(private products: ProductService, private users: UserService) { }
   id:any = ''
   name: string = ''
@@ -35,9 +38,10 @@ export class ProductsComponent {
     )
   }
 
+
+
   
   addIngredient(name:string): void {
-    this.id = sessionStorage.getItem("id");
     this.name = name
     this.users.addIngredient(this.id, this.name).subscribe(
       response => {
@@ -46,13 +50,47 @@ export class ProductsComponent {
       error => {
         console.log(error)
       }
-    )
-    
-    
+    )    
   }
 
-  cambiaso(): void {
-    this.cambio = !this.cambio
-    console.log(this.cambio)
+  removeIngredient(name: string): void {
+    this.name = name
+    this.users.removeIngredient(this.id, this.name).subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  getUserById(): void{
+    this.users.getUser(this.id).subscribe(
+      response => {
+        console.log(response)
+        this.userProducts = response.ingredients
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  cambiaso(event: any, name: string): void {
+    console.log(event.target.checked)
+    if (event.target.checked) {
+      this.addIngredient(name)
+    } else {
+      this.removeIngredient(name)
+    }
+
+
+  }
+
+  boolFunction(name: string): boolean {
+    const validation: any = this.userProducts.find((x) => x == name)
+
+    return validation
   }
 }

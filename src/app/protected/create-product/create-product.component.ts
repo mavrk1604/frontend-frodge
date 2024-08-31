@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { HttpClient } from '@angular/common/http';
+import { ProductService } from '../../services/product.service';
 
 
 @Component({
@@ -27,13 +28,17 @@ export class CreateProductComponent {
     perishable: false
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private productservice:ProductService) { }
 
   onSubmit() {
-    this.http.post('http://localhost:8080/api/create-product', this.product)
-      .subscribe(response => {
-        console.log(response);
-      });
+    this.productservice.createProduct(this.product).subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 
   onVegetarianChange(event: Event) {
