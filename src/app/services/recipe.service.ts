@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
 
-private apiUrl: string = "http://localhost8080";
+private apiUrl: string = "http://localhost:8080/api/";
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +22,10 @@ private apiUrl: string = "http://localhost8080";
 
   }): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/create-recipe`, recipe);
+  }
+
+  getAllRecipes() {
+    return this.http.get<any>(`${this.apiUrl}/get-all-recipes`)
   }
 
 }

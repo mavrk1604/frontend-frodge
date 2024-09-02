@@ -1,4 +1,4 @@
-<div class="recipes-container">
+<div class="recipes-container" >
   <app-navbar></app-navbar>
   <div class="recipes-main">
     <div class="searchbar">
@@ -15,15 +15,17 @@
       </div>
     </div>
     <div class="recipes-grid">
+      @for (recipe of allRecipes; track $index) {
       <div class="recipe-card">
         <div class="recipe-card_img">
-          <img src="https://cdn.colombia.com/gastronomia/2011/08/02/bandeja-paisa-1616.webp" alt="">
+          <img [src]="recipe.imageurl" alt="">
         </div>
         <div class="recipe-card_info">
-          <h3>Bandeja Paisa</h3>
+          <h3>{{recipe.name}}</h3>
           <button class="view-button">Ver Receta</button>
         </div>
       </div>
+      }
     </div>
   </div>
 </div>
