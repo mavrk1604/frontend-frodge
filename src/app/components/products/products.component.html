@@ -32,10 +32,24 @@
           </div>
 
           <button class="recipes-button">Recetas</button>
-          <button class="info-button">Informacion</button>
+          <button class="info-button" (click)="openModal(product)">Información</button>
         </div>
       </div>    
       
     </div>
   </div>
+  <!-- Modal Structure -->
+  <div id="productModal" class="modal" *ngIf="selectedProduct">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+      <h2>{{selectedProduct.name}}</h2>
+      <img [src]="selectedProduct.imageurl" alt="{{selectedProduct.name}}">
+      <p>{{selectedProduct.type}}</p>
+      <h3 class="modal-description">Descripción: {{selectedProduct.description}}</h3>
+      <h3 class="modal-conservation">Conservación: {{selectedProduct.conservation}}</h3>
+      <button>Recetas con {{selectedProduct.name}}</button>
+    </div>
+  </div>
+  <div class="modal-overlay" *ngIf="selectedProduct"></div>
+
 </div>

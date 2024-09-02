@@ -21,6 +21,7 @@ export class ProductsComponent {
   }
   allProducts: any[] = [] 
   userProducts: any[] = [] 
+  selectedProduct: any = null;
   constructor(private products: ProductService, private users: UserService) { }
   id:any = ''
   name: string = ''
@@ -37,7 +38,6 @@ export class ProductsComponent {
       }
     )
   }
-
 
 
   
@@ -85,12 +85,19 @@ export class ProductsComponent {
       this.removeIngredient(name)
     }
 
-
   }
 
   boolFunction(name: string): boolean {
     const validation: any = this.userProducts.find((x) => x == name)
 
     return validation
+  }
+
+  openModal(product: any): void {
+    this.selectedProduct = product;
+  }
+
+  closeModal(): void {
+    this.selectedProduct = null;
   }
 }
