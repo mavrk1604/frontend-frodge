@@ -18,6 +18,7 @@ font-family: "Playwrite US Trad", cursive; */
 
 :root {
   --bg-light: #F7F4EA;
+  --bg-dark: #c8c6be;
   --green-light: #27A69E;
   --green-dark: #0B312E;
   --blue-lighter: #b4d6f2;

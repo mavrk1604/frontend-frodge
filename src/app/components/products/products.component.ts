@@ -29,8 +29,18 @@ export class ProductsComponent {
   getAllProducts(): void {
     this.products.getAllProducts().subscribe(
       response => {
-        console.log(response.products)
-        this.allProducts = response.products
+        this.allProducts = [...response.products]
+        this.allProducts.forEach(product => {
+          const fridgeValidation: boolean = this.isSaved(product.name, this.userProducts)
+          product.isOnFridge =  fridgeValidation
+        })
+        this.allProducts.sort((a, b) => {
+          if (a.isOnFridge === b.isOnFridge) {
+            return a.name.localeCompare(b.name);
+          } else {
+            return a.isOnFridge ? -1 : 1;
+          }
+        })
         console.log(this.allProducts)
       },
       error => {
@@ -45,7 +55,18 @@ export class ProductsComponent {
     this.name = name
     this.users.addIngredient(this.id, this.name).subscribe(
       response => {
-        console.log(response)
+        // console.log(response)
+        const product = this.allProducts.find(x => x.name == name)
+        product.isOnFridge = true
+        const index = this.allProducts.findIndex(x => x.name == name)
+        this.allProducts[index] = product
+        this.allProducts.sort((a, b) => {
+          if (a.isOnFridge === b.isOnFridge) {
+            return a.name.localeCompare(b.name);
+          } else {
+            return a.isOnFridge ? -1 : 1;
+          }
+        })
       },
       error => {
         console.log(error)
@@ -57,7 +78,17 @@ export class ProductsComponent {
     this.name = name
     this.users.removeIngredient(this.id, this.name).subscribe(
       response => {
-        console.log(response)
+        const product = this.allProducts.find(x => x.name == name)
+        product.isOnFridge = false
+        const index = this.allProducts.findIndex(x => x.name == name)
+        this.allProducts[index] = product
+        this.allProducts.sort((a, b) => {
+          if (a.isOnFridge === b.isOnFridge) {
+            return a.name.localeCompare(b.name);
+          } else {
+            return a.isOnFridge ? -1 : 1;
+          }
+        })
       },
       error => {
         console.log(error)
@@ -68,7 +99,7 @@ export class ProductsComponent {
   getUserById(): void{
     this.users.getUser(this.id).subscribe(
       response => {
-        console.log(response)
+        // console.log(response)
         this.userProducts = response.ingredients
       },
       error => {
@@ -80,15 +111,22 @@ export class ProductsComponent {
   cambiaso(event: any, name: string): void {
     console.log(event.target.checked)
     if (event.target.checked) {
-      this.addIngredient(name)
+      this.addIngredient(name)      
     } else {
       this.removeIngredient(name)
     }
-
+    this.allProducts = this.allProducts.sort((x: any, y: any) => {
+      return (x === y) ? 0 : -1    })
   }
 
   boolFunction(name: string): boolean {
     const validation: any = this.userProducts.find((x) => x == name)
+
+    return validation
+  }
+
+  isSaved(name: string, ingredient:any[]): boolean {
+    const validation: boolean = ingredient.find((x) => x == name) != undefined
 
     return validation
   }

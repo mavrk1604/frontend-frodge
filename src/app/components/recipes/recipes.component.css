@@ -104,22 +104,33 @@
   flex-direction: column;
   gap: 16px;
   transition: 0.3s;
+  height: 350px;
+  align-content: center;
+  text-align: center;
+  padding: 16px 8px;
+  border-radius: 16px;
 }
 
 .recipe-card:hover {
   transform: translateY(-10px);
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 .recipe-card img {
-  width: 200px;
+  width: 250px;
   height: 200px;
   overflow: hidden;
   object-fit: cover;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
 }
 
 .recipe-card_info {
   font-family: "Poppins", sans-serif;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-transform: capitalize;
 }
 
 .view-button {
@@ -129,9 +140,12 @@
   padding: 8px 16px;
   border-radius: 16px;
   transition: 0.3s;
+  width: 120px;
+  cursor: pointer;
+  align-self: center;
 }
 
 .view-button:hover {
-  border: solid 1px var(--blue-light);
-  background-color: var(--blue-light);
+  border: solid 1px var(--red-light);
+  background-color: var(--red-light);
 }
