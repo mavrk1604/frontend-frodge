@@ -47,7 +47,8 @@
       <p>{{selectedProduct.type}}</p>
       <h3 class="modal-description">Descripción: {{selectedProduct.description}}</h3>
       <h3 class="modal-conservation">Conservación: {{selectedProduct.conservation}}</h3>
-      <button>Recetas con {{selectedProduct.name}}</button>
+      <button class="recipes-with" (click)="goToRecipesWithProductName(selectedProduct.name)">Recetas con
+        {{selectedProduct.name}}</button>
     </div>
   </div>
   <div class="modal-overlay" *ngIf="selectedProduct"></div>
