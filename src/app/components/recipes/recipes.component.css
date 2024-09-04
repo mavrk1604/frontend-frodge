@@ -175,6 +175,7 @@
 .modal-content h2 {
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
+  margin-bottom: 16px;
 }
 
 .modal-content img {
@@ -182,25 +183,19 @@
   max-height: 250px;
   height: auto;
   border-radius: 8px;
-}
-
-.modal-description {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  margin-bottom: 16px;
-  font-weight: 400;
-}
-
-.modal-conservation {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
   margin-bottom: 16px;
 }
+
+.modal-content h4 {
+  font-family: "Space Grotesk", system-ui;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
 
 .modal-content p {
-  font-family: "Space Grotesk", system-ui;
-  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 16px;
 }
 
