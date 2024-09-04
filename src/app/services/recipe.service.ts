@@ -28,5 +28,9 @@ private apiUrl: string = "http://localhost:8080/api/";
     return this.http.get<any>(`${this.apiUrl}/get-all-recipes`)
   }
 
+  getRecipeByIngredientName(name: Observable<any>) {
+    return this.http.get<any>(`${this.apiUrl}/get-recipe-by-ingredient-name/${name}`)
+  }
+
 }
 

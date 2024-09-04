@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +23,7 @@ export class ProductsComponent {
   allProducts: any[] = [] 
   userProducts: any[] = [] 
   selectedProduct: any = null;
-  constructor(private products: ProductService, private users: UserService) { }
+  constructor(private products: ProductService, private users: UserService, private router: Router) { }
   id:any = ''
   name: string = ''
   cambio: boolean = false
@@ -137,5 +138,10 @@ export class ProductsComponent {
 
   closeModal(): void {
     this.selectedProduct = null;
+  }
+
+  goToRecipesWithProductName(name: string): void{
+    console.log(name)
+    this.router.navigate(['/recipes', name.trim()])
   }
 }

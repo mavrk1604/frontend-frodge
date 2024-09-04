@@ -31,7 +31,7 @@
             </label>
           </div>
 
-          <button class="recipes-button">Recetas</button>
+          <button class="recipes-button" (click)="goToRecipesWithProductName(product.name)">Recetas</button>
           <button class="info-button" (click)="openModal(product)">Información</button>
         </div>
       </div>    
