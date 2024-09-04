@@ -142,6 +142,6 @@ export class ProductsComponent {
 
   goToRecipesWithProductName(name: string): void{
     console.log(name)
-    this.router.navigate(['/recipes', name.trim()])
+    this.router.navigate(['/recipes-by-ingredient/', name.trim()])
   }
 }

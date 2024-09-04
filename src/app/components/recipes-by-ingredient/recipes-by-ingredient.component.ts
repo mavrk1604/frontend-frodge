@@ -5,22 +5,22 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { RecipeService } from '../../services/recipe.service';
 
 @Component({
-  selector: 'app-recipes',
+  selector: 'app-recipes-by-ingredient',
   standalone: true,
-  imports: [RouterLink,FormsModule,NavbarComponent],
-  templateUrl: './recipes.component.html',
-  styleUrl: './recipes.component.css'
+  imports: [RouterLink, FormsModule, NavbarComponent],
+  templateUrl: './recipes-by-ingredient.component.html',
+  styleUrl: './recipes-by-ingredient.component.css'
 })
-export class RecipesComponent implements OnInit {
+export class RecipesByIngredientComponent implements OnInit {
   private recipeService = inject(RecipeService)
-  constructor(private activeRoute: ActivatedRoute){}
+  constructor(private activeRoute: ActivatedRoute) { }
 
   allRecipes!: any[]
 
   ngOnInit(): void {
     const ingredient: any = this.activeRoute.snapshot.paramMap.get('name')
     console.log(ingredient)
-    this.recipeService.getAllRecipes().subscribe(
+    this.recipeService.getRecipeByIngredientName(ingredient).subscribe(
       response => {
         console.log(response)
         this.allRecipes = response.recipes

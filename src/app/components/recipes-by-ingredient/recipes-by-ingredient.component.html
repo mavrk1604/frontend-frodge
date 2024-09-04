@@ -1,0 +1,32 @@
+<div class="recipes-container">
+  <app-navbar></app-navbar>
+  <div class="recipes-main">
+    <div class="searchbar">
+      <input class="searchinput" placeholder="Busca Recetas" type="text">
+      <button class="searchbutton"><i class="fa-solid fa-magnifying-glass fa-lg"
+          style="color: var(--grey-dark);"></i></button>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-btn">Filtrar Por:<span>&#9662;</span></button>
+      <div class="dropdown-content">
+        <a href="#">Desayuno</a>
+        <a href="#">Almuerzo</a>
+        <a href="#">Cena</a>
+        <a href="#">Vegetariano</a>
+      </div>
+    </div>
+    <div class="recipes-grid">
+      @for (recipe of allRecipes; track $index) {
+      <div class="recipe-card">
+        <div class="recipe-card_img">
+          <img [src]="recipe.imageurl" alt="">
+        </div>
+        <div class="recipe-card_info">
+          <h3>{{recipe.name}}</h3>
+          <button class="view-button">Ver Receta</button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
