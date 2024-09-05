@@ -1,7 +1,10 @@
+.recipes-page {
+  height: 100%;
+  background-color: var(--bg-light);
+}
+
 .recipes-container {
   height: auto;
-  background-color: var(--bg-light);
-  width: 100vw;
 }
 
 .recipes-main {
@@ -99,7 +102,7 @@
   grid-template-rows: repeat(auto, 1fr);
   gap: 16px;
   background-color: var(--bg-light);
-  width: 100vw;
+  width: 100%;
 }
 
 .recipe-card {
