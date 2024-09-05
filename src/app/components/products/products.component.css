@@ -111,6 +111,7 @@
 
 .product-card img {
   height: 36px;
+  padding-left: 16px;
 }
 
 .product-card h3 {
@@ -150,7 +151,6 @@
   cursor: pointer;
   position: relative;
   width: 50px;
-  /* Adjusted width */
   height: 28px;
 }
 
@@ -164,7 +164,6 @@
   background-color: #ccc;
   transition: .4s;
   border-radius: 14px;
-  /* Half of the height to make it rounded */
 }
 
 .slider:before {
@@ -185,7 +184,6 @@
 
 .toggle-switch:checked+.switch-label .slider:before {
   transform: translateX(22px);
-  /* Adjusted knob movement */
 }
 
 .recipes-button {
@@ -301,25 +299,17 @@
 
 .close-button {
   position: absolute;
-  /* Position it absolutely within the modal */
   top: 10px;
-  /* A small margin from the top */
   right: 10px;
-  /* Align it to the right */
   font-size: 24px;
-  /* Size of the "X" */
   cursor: pointer;
-  /* Pointer cursor on hover */
   color: #888;
-  /* Color of the "X" */
 }
 
 .close-button:hover {
   color: #555;
-  /* Darker color on hover */
 }
 
-/* Background Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -330,29 +320,21 @@
   z-index: 1;
 }
 
-/* Styling the scrollbar for the modal */
 .modal::-webkit-scrollbar {
   width: 10px;
-  /* Width of the scrollbar */
 }
 
 .modal::-webkit-scrollbar-track {
   background: var(--grey-light);
-  /* Track color */
   border-radius: 8px;
-  /* Rounded track corners */
 }
 
 .modal::-webkit-scrollbar-thumb {
   background-color: var(--green-light);
-  /* Scrollbar color */
   border-radius: 8px;
-  /* Rounded scrollbar corners */
   border: 2px solid #f1f1f1;
-  /* Adds padding around the thumb */
 }
 
 .modal::-webkit-scrollbar-thumb:hover {
   background-color: #555;
-  /* Darker color on hover */
 }

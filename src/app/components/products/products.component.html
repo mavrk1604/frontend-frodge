@@ -18,8 +18,6 @@
     <div class="products-list"  *ngFor="let product of allProducts">
       <div class="product-card">
         <div class="product-card-left">
-          <label for="ingredientCheckbox"></label>
-          <input type="checkbox" id="ingredientCheckbox" name="ingredient" />
           <img [src]=product.imageurl alt="">
           <h3>{{product.name}}</h3>
         </div>
@@ -38,7 +36,7 @@
       
     </div>
   </div>
-  <!-- Modal Structure -->
+
   <div id="productModal" class="modal" *ngIf="selectedProduct">
     <div class="modal-content">
       <span class="close-button" (click)="closeModal()">&times;</span>

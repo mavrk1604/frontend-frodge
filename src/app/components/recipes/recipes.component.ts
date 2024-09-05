@@ -17,7 +17,7 @@ export class RecipesComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
 
   allRecipes!: any[];
-  selectedRecipe: any = null; // Variable to hold the selected recipe
+  selectedRecipe: any = null; 
 
   ngOnInit(): void {
     const ingredient: any = this.activeRoute.snapshot.paramMap.get('name');
@@ -34,7 +34,7 @@ export class RecipesComponent implements OnInit {
   }
 
   openModal(recipe: any): void {
-    this.selectedRecipe = recipe; // Set the selected recipe for modal
+    this.selectedRecipe = recipe; 
   }
 
   closeModal(): void {

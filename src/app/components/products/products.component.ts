@@ -56,7 +56,6 @@ export class ProductsComponent {
     this.name = name
     this.users.addIngredient(this.id, this.name).subscribe(
       response => {
-        // console.log(response)
         const product = this.allProducts.find(x => x.name == name)
         product.isOnFridge = true
         const index = this.allProducts.findIndex(x => x.name == name)
@@ -100,7 +99,6 @@ export class ProductsComponent {
   getUserById(): void{
     this.users.getUser(this.id).subscribe(
       response => {
-        // console.log(response)
         this.userProducts = response.ingredients
       },
       error => {
