@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { RecipeService } from '../../services/recipe.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-recipes-by-ingredient',
   standalone: true,
-  imports: [RouterLink, FormsModule, NavbarComponent],
+  imports: [RouterLink, FormsModule, NavbarComponent, CommonModule],
   templateUrl: './recipes-by-ingredient.component.html',
   styleUrl: './recipes-by-ingredient.component.css'
 })
@@ -16,6 +17,8 @@ export class RecipesByIngredientComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
 
   allRecipes!: any[]
+  selectedRecipe: any = null; // Variable to hold the selected recipe
+
 
   ngOnInit(): void {
     const ingredient: any = this.activeRoute.snapshot.paramMap.get('name')
@@ -29,5 +32,13 @@ export class RecipesByIngredientComponent implements OnInit {
         console.log(error)
       }
     )
+  }
+
+  openModal(recipe: any): void {
+    this.selectedRecipe = recipe; // Set the selected recipe for modal
+  }
+
+  closeModal(): void {
+    this.selectedRecipe = null;
   }
 }

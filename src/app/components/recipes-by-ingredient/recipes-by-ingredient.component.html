@@ -23,10 +23,23 @@
         </div>
         <div class="recipe-card_info">
           <h3>{{recipe.name}}</h3>
-          <button class="view-button">Ver Receta</button>
+          <button class="view-button" (click)="openModal(recipe)">Ver Receta</button>
         </div>
       </div>
       }
     </div>
   </div>
 </div>
+
+  <!-- Modal Structure -->
+  <div id="recipeModal" class="modal" *ngIf="selectedRecipe">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+      <h2>{{selectedRecipe.name}}</h2>
+      <img [src]="selectedRecipe.imageurl" alt="{{selectedRecipe.name}}">
+      <h4>Ingredientes: {{selectedRecipe.ingredients}}</h4>
+      <h4>Categoría: {{selectedRecipe.category}}</h4>
+      <p>{{selectedRecipe.preparation}}</p>
+    </div>
+  </div>
+  <div class="modal-overlay" *ngIf="selectedRecipe"></div>
