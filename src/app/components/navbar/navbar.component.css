@@ -69,6 +69,25 @@
     border: 2px solid var(--blue-dark);
 }
 
+.nav-logout-button {
+    font-family: "Poppins", sans-serif;
+        background-color: var(--blue-light);
+        color: white;
+        border: 2px solid var(--blue-light);
+        font-size: 14px;
+        padding: 2px 16px;
+        height: 32px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        align-content: center;
+        transition: 0.3s;
+}
+
+.nav-logout-button:hover {
+    background-color: var(--red-light);
+    border: 2px solid var(--red-light);
+}
+
 .section-buttons {
     justify-content: end;
     margin-right: 13%;
