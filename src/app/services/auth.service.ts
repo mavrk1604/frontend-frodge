@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http: HttpClient) {}
-  apiUrl: string = "http://localhost:8080/api"
+  apiUrl: string = "https://3.137.199.247:8080/api";
 
   register(email: String, password: String): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, { email, password })
