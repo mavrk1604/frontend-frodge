@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
 
-  private apiUrl: string = "https://3.137.199.247:8080/api";
+  private apiUrl: string = "http://18.216.104.38:8080/api";
 
   constructor(private http: HttpClient) { }
 
